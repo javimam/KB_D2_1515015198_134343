@@ -1,0 +1,32 @@
+
+
+
+
+
+predicates
+
+	maling(symbol) - nondeterm (o)	
+	menangkap(symbol,symbol,symbol) - nondeterm(o,o,o) 
+	mencuri(symbol,symbol) - nondeterm(i,i) 
+	polisi(symbol) - nondeterm(o)
+	barang(symbol) - nondeterm(o)
+	
+clauses
+	maling(siJali).
+	maling(siImam).
+	
+	polisi(siBambang).
+	polisi(siUdin).
+	
+	barang(labtop).
+	barang(handPhone).
+	
+	mencuri(siImam,labtop).
+	mencuri(siImam,handPhone).
+	
+	menangkap(X,Y,Z):-polisi(X),maling(Y),barang(Z).
+
+goal
+	
+	menangkap(Polisi,Maling,Barang).
+	
